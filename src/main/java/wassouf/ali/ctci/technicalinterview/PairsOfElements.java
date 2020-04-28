@@ -12,7 +12,6 @@ public class PairsOfElements
     public Integer countNumberOfPairs(int[] array, int k)
     {
         int count = 0;
-        int i = 0;
         Set<Integer> set = new HashSet<>();
         for (int element : array)
         {

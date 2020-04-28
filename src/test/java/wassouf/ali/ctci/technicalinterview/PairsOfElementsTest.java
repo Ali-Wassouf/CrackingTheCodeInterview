@@ -1,5 +1,6 @@
 package wassouf.ali.ctci.technicalinterview;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class PairsOfElementsTest
@@ -12,6 +13,6 @@ public class PairsOfElementsTest
     {
         int[] array = {1, 7, 5, 9, 2, 12, 3};
 
-        pairsOfElements.countNumberOfPairs(array,2);
+        Assert.assertEquals(8,pairsOfElements.countNumberOfPairs(array,2).intValue());
     }
 }
