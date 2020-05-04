@@ -3,8 +3,6 @@ package wassouf.ali.ctci.technicalinterview;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class FindIntersectionOfTwoSortedArraysTest
 {
     FindIntersectionOfTwoSortedArrays findIntersectionOfTwoSortedArrays = new FindIntersectionOfTwoSortedArrays();
