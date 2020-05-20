@@ -75,7 +75,6 @@ public class CustomHashMap<K, V>
         }
     }
 
-
     /**
      * Shifting right by 16 is equal to throwing the left half of the 32-bits number
      * Since the mask in the HashMap is a power of two, in our case 16.
@@ -115,12 +114,15 @@ public class CustomHashMap<K, V>
         {
             if (!current.key.equals(key))
             {
-                while(current.next != null){
+                while (current.next != null)
+                {
                     current = current.next;
                 }
-                current.next = newNode(hash,key,value);
+                current.next = newNode(hash, key, value);
 
-            }else{
+            }
+            else
+            {
 
                 current.value = value;
             }
@@ -191,14 +193,16 @@ public class CustomHashMap<K, V>
                             }
                             hiTail = oldTablePointer;
                         }
-                    }while((oldTablePointer = next) != null);
-                    if(loTail != null){
+                    } while ((oldTablePointer = next) != null);
+                    if (loTail != null)
+                    {
                         loTail.next = null;
                         newTable[i] = loHead;
                     }
-                    if(loHead != null){
+                    if (loHead != null)
+                    {
                         loHead.next = null;
-                        newTable[i+table.length] = hiHead;
+                        newTable[i + table.length] = hiHead;
                     }
                 }
             }

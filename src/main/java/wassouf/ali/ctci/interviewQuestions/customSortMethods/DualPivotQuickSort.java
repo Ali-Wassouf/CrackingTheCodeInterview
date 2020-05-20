@@ -10,20 +10,22 @@ public class DualPivotQuickSort
 
     private static void sort(int[] array, int left, int right)
     {
-        if(left>right)
+        if (left > right)
+        {
             return;
-
+        }
         int leftPivot = array[left];
         int rightPivot = array[right];
         int leftPointer = left + 1;
         int rightPointer = right - 1;
+
         int loopVariable = leftPointer;
 
         while (loopVariable <= rightPointer)
         {
             if (array[loopVariable] < leftPivot)
             {
-                swap(array, loopVariable, leftPointer);
+                swap(array, leftPointer, loopVariable);
                 leftPointer++;
             }
             else if (array[loopVariable] >= rightPivot)
@@ -36,20 +38,22 @@ public class DualPivotQuickSort
                 rightPointer--;
                 if (array[loopVariable] < leftPivot)
                 {
-                    swap(array, loopVariable, leftPointer);
+                    swap(array, leftPointer, loopVariable);
                     leftPointer++;
-
                 }
             }
 
             loopVariable++;
         }
-        leftPointer--; rightPointer++;
-        swap(array, leftPointer,left);
-        swap(array, rightPointer, right);
+        leftPointer--;
+        rightPointer++;
+
+        swap(array, left, leftPointer);
+        swap(array, right, rightPointer);
+
         sort(array, left, leftPointer-1);
-        sort(array, right+1, right);
-        sort(array, leftPointer+1, right-1);
+        sort(array, leftPointer+1, rightPointer-1);
+        sort(array, rightPointer+1, right);
     }
 
 
